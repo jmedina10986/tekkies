@@ -191,7 +191,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar a i {
   font-size: 12px;
   line-height: 0;
-  margin-left: 5px;
+  margin-left: 6px;
 }
 
 .navbar a:hover, .navbar .active, .navbar li:hover > a {
@@ -269,6 +269,28 @@ h1, h2, h3, h4, h5, h6 {
   .navbar .dropdown .dropdown:hover > ul {
     left: -100%;
   }
+}
+
+#navbar .social-links a {
+  margin-left: 0.2em;
+  font-size: 18px;
+  display: inline-block;
+  background: #FC304d;
+  color: #fff;
+  line-height: 1;
+  padding: 15px 15px 0 0px;
+  margin-right: 0px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#navbar .social-links a:hover {
+  background: #0e2f55;
+  color: #fff;
+  text-decoration: none;
 }
 
 /**
