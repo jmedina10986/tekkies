@@ -286,4 +286,30 @@
     })
   });
 
+  $("#sendMail").click(()=> {
+    if ($("#message-contact").val() && $("#name-contact").val() && $("#email-contact").val()) {
+    const message = `name: ${$("#name-contact").val()}<br/>
+      email: ${$("#email-contact").val()}<br/>
+      phone: ${$("#phone-contact").val()}<br/>
+      message: ${$("#message-contact").val()}<br/>`;
+      
+    const data = { 
+      email: $("#email-contact").val(),
+      message: message,
+      subject: $("#subject-contact").val()
+    }
+    console.log(data)
+    axios.post("https://eb46xyi2sd.execute-api.us-east-1.amazonaws.com/production/", data)
+    .then(response => {
+      $(".sent-message").show();
+      $("#message-contact").val('');
+      $("#subject-contact").val('');
+      $("#email-contact").val('');
+      $("#name-contact").val('');
+      $("#phone-contact").val('');
+      setInterval(function(){ location.reload(); }, 4500);
+    })
+    .catch(error => console.log(error));
+  }
+  })
 })()
