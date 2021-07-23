@@ -287,8 +287,9 @@
   });
 
   $("#sendMail").click(()=> {
+    
     if ($("#message-contact").val() && $("#name-contact").val() && $("#email-contact").val()) {
-    const message = `name: ${$("#name-contact").val()}<br/>
+      const message = `name: ${$("#name-contact").val()}<br/>
       email: ${$("#email-contact").val()}<br/>
       phone: ${$("#phone-contact").val()}<br/>
       message: ${$("#message-contact").val()}<br/>`;
@@ -298,8 +299,9 @@
       message: message,
       subject: $("#subject-contact").val()
     }
+    
     console.log(data)
-    axios.post("https://eb46xyi2sd.execute-api.us-east-1.amazonaws.com/production/", data)
+    axios.post("https://8j4b0y9om6.execute-api.us-east-1.amazonaws.com/production/", data)
     .then(response => {
       $(".sent-message").show();
       $("#message-contact").val('');
